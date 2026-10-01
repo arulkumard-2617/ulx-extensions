@@ -1,0 +1,46 @@
+---
+description: Author Eventz SDK extension plugin manifests that satisfy server validation
+globs: **/plugin-manifest.json
+alwaysApply: false
+---
+
+# SDK Extension Manifest
+
+- Keep `service` as `BACKSTAGE`.
+- Include `locale`, `whiteListedDomains`, and `modules.widgets`; use `dcConnectors` for connector declarations.
+- Every widget needs a non-empty, globally unique `id` and a supported `location`.
+- Do not repeat the same full location. A `#suffix` distinguishes instances, while validation still checks the static location before `#`.
+- Declare at most one widget whose static location is `backstage.background.process`.
+- Keep every local widget URL under `/app/` and ensure the referenced file is packaged.
+
+Mode requirements:
+
+- `route`: include `navigationConfig.customPath` and `navigationConfig.url`, both non-empty.
+- `newTab`: include `navigationConfig.urlType`; `static` requires `navigationConfig.url`, while `dynamic` requires `navigationConfig.method`.
+- `popup`: include root `url`, `popupConfig.position`, and `popupConfig.action`.
+- `sidePane`, `modal`, embedded, background, and widgets without a mode: include root `url`.
+- Route-only locations must use `viewMode: "route"`: portal settings left pane, space settings left pane, event settings left pane, and event abstract editor.
+
+Optional `labelConfig`:
+
+- `{ "type": "static", "label": "..." }`
+- `{ "type": "dynamic", "method": "..." }`
+
+Supported static locations:
+
+- `backstage.portal.settings.integrations.crm`
+- `backstage.site.pre.registration`
+- `backstage.event.attendee.menu`
+- `backstage.custom.form.response.menu`
+- `backstage.background.process`
+- `backstage.config.custom.domain`
+- `backstage.exhibitor.menu`
+- `backstage.portal.settings.left.pane`
+- `backstage.space.settings.left.pane`
+- `backstage.floorplan.editor.left.menu`
+- `backstage.event.settings.left.pane`
+- `backstage.portal.settings.payments`
+- `backstage.event.ticketing.payments`
+- `backstage.event.abstract.editor`
+
+Add only domains the widget actually calls. Keep connector link names identical between `dcConnectors` and `app.request`.

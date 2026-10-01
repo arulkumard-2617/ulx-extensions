@@ -1,0 +1,639 @@
+/*
+  Component rules aligned with ULS button / input / tag sizing & colors.
+  Styles PrimeReact defaults so they match Backstage look without shipping ULS CSS.
+*/
+
+/* -------------------------------------------------------------------------- */
+/* Button — sizes from ULS button.less                                        */
+/* xs 24 | s 28 (default) | m 32 | l 36 | xl 40                               */
+/* -------------------------------------------------------------------------- */
+.p-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: var(--bs-radius-md);
+  font-family: var(--bs-font-medium);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  background-color: var(--bs-primary);
+  color: var(--bs-primary-fg);
+  box-shadow: inset 0 0 0 1px var(--bs-primary);
+  min-height: 28px;
+  padding-inline: 12px;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.p-button:not(:disabled):hover {
+  background-color: var(--bs-primary-hover);
+}
+
+.p-button:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+.p-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Severities */
+.p-button.p-button-success {
+  background-color: var(--bs-success);
+  box-shadow: inset 0 0 0 1px var(--bs-success);
+  color: var(--bs-success-fg);
+}
+.p-button.p-button-success:not(:disabled):hover {
+  filter: brightness(0.92);
+}
+
+.p-button.p-button-warning {
+  background-color: var(--bs-warning);
+  box-shadow: inset 0 0 0 1px var(--bs-warning);
+  color: var(--bs-warning-fg);
+}
+.p-button.p-button-warning:not(:disabled):hover {
+  filter: brightness(0.92);
+}
+
+.p-button.p-button-danger {
+  background-color: var(--bs-danger);
+  box-shadow: inset 0 0 0 1px var(--bs-danger);
+  color: var(--bs-danger-fg);
+}
+.p-button.p-button-danger:not(:disabled):hover {
+  filter: brightness(0.92);
+}
+
+.p-button.p-button-info {
+  background-color: var(--bs-info);
+  box-shadow: inset 0 0 0 1px var(--bs-info);
+  color: var(--bs-info-fg);
+}
+.p-button.p-button-info:not(:disabled):hover {
+  filter: brightness(0.92);
+}
+
+.p-button.p-button-secondary {
+  background-color: var(--bs-surface-2);
+  color: var(--bs-text);
+  box-shadow: inset 0 0 0 1px var(--bs-border-dark);
+}
+.p-button.p-button-secondary:not(:disabled):hover {
+  background-color: var(--bs-surface-3);
+}
+
+/* Outlined / text */
+.p-button.p-button-outlined {
+  background-color: transparent;
+  color: var(--bs-primary-text);
+  box-shadow: inset 0 0 0 1px var(--bs-primary);
+}
+.p-button.p-button-outlined:not(:disabled):hover {
+  background-color: var(--bs-primary-layer2);
+  color: var(--bs-primary-text);
+}
+
+.p-button.p-button-text {
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--bs-primary-text);
+}
+.p-button.p-button-text:not(:disabled):hover {
+  background-color: var(--bs-primary-layer2);
+}
+
+/* Size classes — use via className on Button, e.g. className="s-size" */
+.p-button.xs-size {
+  min-height: 24px;
+  padding-inline: 8px;
+  font-size: 12px;
+}
+.p-button.s-size {
+  min-height: 28px;
+  padding-inline: 12px;
+  font-size: 13px;
+}
+.p-button.m-size {
+  min-height: 32px;
+  padding-inline: 12px;
+  font-size: 14px;
+}
+.p-button.l-size {
+  min-height: 36px;
+  padding-inline: 16px;
+  font-size: 15px;
+}
+.p-button.xl-size {
+  min-height: 40px;
+  padding-inline: 16px;
+  font-size: 16px;
+}
+
+.p-button.p-button-rounded {
+  border-radius: 9999px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* InputText — sizes from ULS input.less                                      */
+/* default s: 28 | xs 24 | m 32 | l 36 | xl 40                                */
+/* -------------------------------------------------------------------------- */
+.p-inputtext {
+  appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--bs-input-bg);
+  color: var(--bs-input-fg);
+  border: 1px solid var(--bs-input-border);
+  border-radius: var(--bs-radius-md);
+  font-family: var(--bs-font-regular);
+  font-size: 13px;
+  line-height: 1.2;
+  min-height: 28px;
+  padding: 4px 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.p-inputtext::placeholder {
+  color: var(--bs-placeholder);
+}
+
+.p-inputtext:enabled:hover {
+  border-color: var(--bs-border-dark);
+}
+
+.p-inputtext:enabled:focus {
+  outline: none;
+  border-color: var(--bs-input-focus-border);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--bs-input-focus-border) 25%, transparent);
+  background-color: var(--bs-input-bg);
+}
+
+.p-inputtext:disabled {
+  background-color: var(--bs-input-disabled-bg);
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.p-inputtext.p-invalid {
+  border-color: var(--bs-danger);
+}
+
+.p-inputtext.xs-size {
+  min-height: 24px;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+.p-inputtext.s-size {
+  min-height: 28px;
+  font-size: 13px;
+  padding: 4px 8px;
+}
+.p-inputtext.m-size {
+  min-height: 32px;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+.p-inputtext.l-size {
+  min-height: 36px;
+  font-size: 14px;
+  padding: 4px 12px;
+}
+.p-inputtext.xl-size {
+  min-height: 40px;
+  font-size: 14px;
+  padding: 4px 12px;
+}
+
+.p-inputtextarea {
+  appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--bs-input-bg);
+  color: var(--bs-input-fg);
+  border: 1px solid var(--bs-input-border);
+  border-radius: var(--bs-radius-md);
+  font-family: var(--bs-font-regular);
+  font-size: 13px;
+  padding: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.p-inputtextarea:enabled:focus {
+  outline: none;
+  border-color: var(--bs-input-focus-border);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--bs-input-focus-border) 25%, transparent);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Tag / Chip — sizes from ULS tag.less                                       */
+/* base ~24 | xxs 20 | xs 24 | s 28 | m 32 | l 36 | xl 40                     */
+/* -------------------------------------------------------------------------- */
+.p-tag,
+.p-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: var(--bs-radius-md);
+  font-family: var(--bs-font-medium);
+  font-weight: 500;
+  background-color: var(--bs-primary);
+  color: var(--bs-primary-fg);
+  min-height: 24px;
+  height: 24px;
+  padding-inline: 12px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.p-tag.p-tag-success {
+  background-color: var(--bs-success);
+  color: var(--bs-success-fg);
+}
+.p-tag.p-tag-warning {
+  background-color: var(--bs-warning);
+  color: var(--bs-warning-fg);
+}
+.p-tag.p-tag-danger {
+  background-color: var(--bs-danger);
+  color: var(--bs-danger-fg);
+}
+.p-tag.p-tag-info {
+  background-color: var(--bs-info);
+  color: var(--bs-info-fg);
+}
+.p-tag.p-tag-secondary {
+  background-color: var(--bs-surface-2);
+  color: var(--bs-text);
+  border-color: var(--bs-border);
+}
+
+.p-tag.xxs-size {
+  height: 20px;
+  min-height: 20px;
+  padding-inline: 8px;
+  font-size: 11px;
+  border-radius: 4px;
+}
+.p-tag.xs-size {
+  height: 24px;
+  min-height: 24px;
+  padding-inline: 12px;
+  font-size: 13px;
+  border-radius: 4px;
+}
+.p-tag.s-size {
+  height: 28px;
+  min-height: 28px;
+  padding-inline: 12px;
+  font-size: 14px;
+}
+.p-tag.m-size {
+  height: 32px;
+  min-height: 32px;
+  padding-inline: 12px;
+  font-size: 14px;
+}
+.p-tag.l-size {
+  height: 36px;
+  min-height: 36px;
+  padding-inline: 12px;
+  font-size: 14px;
+}
+.p-tag.xl-size {
+  height: 40px;
+  min-height: 40px;
+  padding-inline: 16px;
+  font-size: 15px;
+  border-radius: var(--bs-radius-lg);
+}
+
+.p-tag.p-tag-rounded,
+.p-chip {
+  border-radius: 9999px;
+}
+
+/* Soft / outlined tag helpers */
+.p-tag.soft {
+  background-color: var(--bs-primary-layer2);
+  color: var(--bs-primary-text);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dropdown / Select                                                          */
+/* -------------------------------------------------------------------------- */
+.p-dropdown {
+  background-color: var(--bs-input-bg);
+  border: 1px solid var(--bs-input-border);
+  border-radius: var(--bs-radius-md);
+  min-height: 28px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.p-dropdown:not(.p-disabled):hover {
+  border-color: var(--bs-border-dark);
+}
+
+.p-dropdown.p-focus {
+  border-color: var(--bs-input-focus-border);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--bs-input-focus-border) 25%, transparent);
+}
+
+.p-dropdown .p-dropdown-label {
+  font-size: 13px;
+  color: var(--bs-input-fg);
+  padding: 4px 8px;
+}
+
+.p-dropdown-panel {
+  background: var(--bs-surface);
+  border: 1px solid var(--bs-border);
+  border-radius: var(--bs-radius-md);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: var(--bs-text);
+}
+
+.p-dropdown-item {
+  font-size: 13px;
+  padding: 8px 12px;
+  color: var(--bs-text);
+}
+
+.p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+  background: var(--bs-primary-layer2);
+  color: var(--bs-primary-text);
+}
+
+.p-dropdown-item.p-highlight {
+  background: var(--bs-primary-layer3);
+  color: var(--bs-primary-text);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Card                                                                       */
+/* -------------------------------------------------------------------------- */
+.p-card {
+  background: var(--bs-surface);
+  color: var(--bs-text);
+  border: 1px solid var(--bs-border);
+  border-radius: var(--bs-radius-lg);
+  box-shadow: none;
+}
+
+.p-card .p-card-title {
+  font-size: 16px;
+  font-family: var(--bs-font-medium);
+  color: var(--bs-text);
+}
+
+.p-card .p-card-subtitle {
+  color: var(--bs-text-secondary);
+  font-size: 13px;
+}
+
+.p-card .p-card-content {
+  color: var(--bs-text);
+  font-size: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Selection controls                                                         */
+/* -------------------------------------------------------------------------- */
+.p-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.p-checkbox .p-checkbox-box {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bs-input-border);
+  border-radius: var(--bs-radius-sm);
+  background: var(--bs-input-bg);
+  color: var(--bs-primary-fg);
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.p-checkbox:not(.p-disabled) .p-checkbox-box:hover {
+  border-color: var(--bs-primary);
+}
+
+.p-checkbox.p-highlight .p-checkbox-box {
+  border-color: var(--bs-primary);
+  background: var(--bs-primary);
+}
+
+.p-checkbox.p-focus .p-checkbox-box {
+  box-shadow: 0 0 0 2px var(--bs-focus-ring);
+}
+
+.p-inputswitch {
+  width: 36px;
+  height: 20px;
+}
+
+.p-inputswitch .p-inputswitch-slider {
+  border-radius: 9999px;
+  background: var(--bs-border-dark);
+  transition: background-color 0.2s ease;
+}
+
+.p-inputswitch .p-inputswitch-slider::before {
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: var(--bs-surface);
+}
+
+.p-inputswitch.p-highlight .p-inputswitch-slider {
+  background: var(--bs-success);
+}
+
+.p-inputswitch.p-focus .p-inputswitch-slider {
+  box-shadow: 0 0 0 2px var(--bs-focus-ring);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dialog and right drawer                                                    */
+/* -------------------------------------------------------------------------- */
+.p-component-overlay {
+  background: var(--bs-overlay);
+}
+
+.p-dialog,
+.p-sidebar {
+  border: 1px solid var(--bs-border);
+  background: var(--bs-surface);
+  color: var(--bs-text);
+  box-shadow: var(--bs-shadow-overlay);
+}
+
+.p-dialog {
+  border-radius: var(--bs-radius-lg);
+  overflow: hidden;
+}
+
+.p-dialog .p-dialog-header,
+.p-sidebar .p-sidebar-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--bs-border);
+  background: var(--bs-surface);
+  color: var(--bs-text);
+}
+
+.p-dialog .p-dialog-title,
+.p-sidebar .p-sidebar-title {
+  font-family: var(--bs-font-medium);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.p-dialog .p-dialog-content,
+.p-sidebar .p-sidebar-content {
+  padding: 24px;
+  background: var(--bs-surface);
+  color: var(--bs-text);
+}
+
+.p-dialog .p-dialog-footer,
+.p-sidebar .p-sidebar-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--bs-border);
+  background: var(--bs-surface-2);
+}
+
+.p-dialog .p-dialog-header-icon,
+.p-sidebar .p-sidebar-header-icon {
+  color: var(--bs-text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Data table                                                                 */
+/* -------------------------------------------------------------------------- */
+.p-datatable {
+  color: var(--bs-text);
+}
+
+.p-datatable .p-datatable-wrapper {
+  overflow: auto;
+  border: 1px solid var(--bs-border);
+  border-radius: var(--bs-radius-lg);
+  background: var(--bs-surface);
+}
+
+.p-datatable .p-datatable-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bs-border);
+  background: var(--bs-surface-2);
+  color: var(--bs-text);
+  font-family: var(--bs-font-medium);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background: var(--bs-surface);
+  color: var(--bs-text);
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bs-border);
+  font-size: 13px;
+}
+
+.p-datatable .p-datatable-tbody > tr:last-child > td {
+  border-bottom: 0;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: var(--bs-surface-2);
+}
+
+.p-paginator {
+  gap: 4px;
+  padding: 12px;
+  background: var(--bs-surface);
+  color: var(--bs-text-secondary);
+}
+
+.p-paginator .p-paginator-page.p-highlight {
+  background: var(--bs-primary-layer2);
+  color: var(--bs-primary-text);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Menus and feedback                                                        */
+/* -------------------------------------------------------------------------- */
+.p-menu {
+  min-width: 180px;
+  padding: 6px;
+  border: 1px solid var(--bs-border);
+  border-radius: var(--bs-radius-md);
+  background: var(--bs-surface);
+  box-shadow: var(--bs-shadow-overlay);
+  color: var(--bs-text);
+}
+
+.p-menu .p-menuitem-link {
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--bs-radius-sm);
+  color: var(--bs-text);
+}
+
+.p-menu .p-menuitem-link:hover {
+  background: var(--bs-primary-layer1);
+  color: var(--bs-primary-text);
+}
+
+.p-toast .p-toast-message {
+  border: 1px solid var(--bs-border);
+  border-radius: var(--bs-radius-md);
+  background: var(--bs-surface);
+  box-shadow: var(--bs-shadow-overlay);
+  color: var(--bs-text);
+}
+
+.p-toast .p-toast-message-content {
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.p-progressbar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: var(--bs-surface-3);
+}
+
+.p-progressbar .p-progressbar-value {
+  background: var(--bs-primary);
+}
+
+.p-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bs-primary-layer2);
+  color: var(--bs-primary-text);
+  font-family: var(--bs-font-medium);
+}

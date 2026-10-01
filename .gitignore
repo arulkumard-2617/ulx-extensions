@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-app
+.page-entries
+*.local
+.DS_Store
+.vscode
+.idea
+*.log
+*.zip

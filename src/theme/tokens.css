@@ -1,0 +1,217 @@
+/*
+  Backstage page kit — theme tokens
+  Values aligned with ULS light/dark/cobalt themes (uls_v2).
+  Body classes match product: ulx-default-mode, ulx-dark-mode, ulx-cobalt-theme, etc.
+*/
+
+/* -------------------------------------------------------------------------- */
+/* Light (default)                                                            */
+/* -------------------------------------------------------------------------- */
+.ulx-default-mode {
+  --bs-primary: #4757f2;
+  --bs-primary-hover: #313bcc;
+  --bs-primary-fg: #ffffff;
+  --bs-primary-disabled: #818ae5;
+  --bs-primary-text: #4757f2;
+  --bs-primary-layer1: #f5f8ff;
+  --bs-primary-layer2: #edf1ff;
+  --bs-primary-layer3: #e2e8ff;
+  --bs-primary-layer4: #9cacff;
+
+  --bs-success: #22c55e;
+  --bs-success-fg: #ffffff;
+  --bs-success-bg: #dcfce7;
+  --bs-warning: #f59e0b;
+  --bs-warning-fg: #ffffff;
+  --bs-warning-bg: #fffbeb;
+  --bs-danger: #ef4444;
+  --bs-danger-fg: #ffffff;
+  --bs-danger-bg: #fef2f2;
+  --bs-info: #3b82f6;
+  --bs-info-fg: #ffffff;
+  --bs-info-bg: #eff6ff;
+
+  --bs-text: #000000;
+  --bs-text-secondary: #4b5563;
+  --bs-text-muted: #8995a0;
+  --bs-placeholder: #888585;
+
+  /* Page canvas (Backstage content area) vs white cards/surfaces */
+  --bs-body-bg: #f5f6f8;
+  --bs-surface: #ffffff;
+  --bs-surface-2: #f8f9fb;
+  --bs-surface-3: #f2f3f5;
+  --bs-secondary-bg: #e2e7eb;
+  --bs-nav-bg: #1a1a2e;
+  --bs-sidebar-bg: #f8f9fb;
+  --bs-sidebar-active-bg: #edf1ff;
+  --bs-alert-bg: #fff8e6;
+  --bs-alert-border: #f5d78e;
+  --bs-overlay: rgba(0, 0, 0, 0.54);
+  --bs-shadow-overlay: 0 12px 32px rgba(0, 0, 0, 0.16);
+  --bs-focus-ring: color-mix(in srgb, var(--bs-primary) 25%, transparent);
+
+  --bs-border: #e5e7eb;
+  --bs-border-dark: #d1d5db;
+
+  --bs-input-bg: #ffffff;
+  --bs-input-fg: #000000;
+  --bs-input-border: #d1d5db;
+  --bs-input-disabled-bg: #e5e7eb;
+  --bs-input-focus-border: #2196f3;
+
+  --bs-radius-md: 6px;
+  --bs-radius-sm: 4px;
+  --bs-radius-lg: 8px;
+
+  --bs-font-regular: 'Lato', system-ui, -apple-system, sans-serif;
+  --bs-font-medium: 'Lato', system-ui, -apple-system, sans-serif;
+  --bs-font-bold: 'Lato', system-ui, -apple-system, sans-serif;
+  --bs-font-light: 'Lato', system-ui, -apple-system, sans-serif;
+
+  color: var(--bs-text);
+  background-color: var(--bs-body-bg);
+  font-family: var(--bs-font-regular);
+  font-size: 14px;
+  line-height: 1.428;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark mode (stacks on default-mode, same as product)                        */
+/* -------------------------------------------------------------------------- */
+.ulx-default-mode.ulx-dark-mode {
+  --bs-primary-text: #6e7bf7;
+  --bs-primary-disabled: #5a5f93;
+  --bs-primary-hover: #7983fc;
+  --bs-primary-layer1: #20212f;
+  --bs-primary-layer2: #292a3d;
+  --bs-primary-layer3: #34364f;
+  --bs-primary-layer4: #3e4163;
+
+  --bs-text: #e7e7e7;
+  --bs-text-secondary: #b7b7bf;
+  --bs-text-muted: #a8a8a8;
+  --bs-placeholder: #676a70;
+
+  --bs-body-bg: #141414;
+  --bs-surface: #1c1c1c;
+  --bs-surface-2: #242424;
+  --bs-surface-3: #2a2a2a;
+  --bs-secondary-bg: #303030;
+  --bs-nav-bg: #0f0f14;
+  --bs-sidebar-bg: #1c1c1c;
+  --bs-sidebar-active-bg: #292a3d;
+  --bs-alert-bg: #3d3420;
+  --bs-alert-border: #8a7340;
+  --bs-overlay: rgba(0, 0, 0, 0.72);
+  --bs-shadow-overlay: 0 12px 32px rgba(0, 0, 0, 0.4);
+
+  --bs-border: #3a3a3a;
+  --bs-border-dark: #535353;
+
+  --bs-input-bg: #242424;
+  --bs-input-fg: #e7e7e7;
+  --bs-input-border: #535353;
+  --bs-input-disabled-bg: #303030;
+  --bs-input-focus-border: #6e7bf7;
+
+  --bs-success-bg: #14532d;
+  --bs-warning-bg: #78350f;
+  --bs-danger-bg: #7f1d1d;
+  --bs-info-bg: #1e3a5f;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Color themes (light)                                                       */
+/* -------------------------------------------------------------------------- */
+.ulx-default-mode:not(.ulx-dark-mode).ulx-cobalt-theme {
+  --bs-primary: #2c66dd;
+  --bs-primary-text: #2c66dd;
+  --bs-primary-hover: #4b94f9;
+  --bs-primary-layer1: #fafdff;
+  --bs-primary-layer2: #eaf4ff;
+  --bs-primary-layer3: #ddedff;
+  --bs-primary-layer4: #aacef6;
+}
+
+.ulx-default-mode:not(.ulx-dark-mode).ulx-cardinal-theme {
+  --bs-primary: #c41e3a;
+  --bs-primary-text: #c41e3a;
+  --bs-primary-hover: #a01830;
+  --bs-primary-layer1: #fff5f7;
+  --bs-primary-layer2: #ffe8ec;
+  --bs-primary-layer3: #ffd6dd;
+  --bs-primary-layer4: #f5a3b0;
+}
+
+.ulx-default-mode:not(.ulx-dark-mode).ulx-fern-theme {
+  --bs-primary: #2d8a5e;
+  --bs-primary-text: #2d8a5e;
+  --bs-primary-hover: #24704c;
+  --bs-primary-layer1: #f3faf6;
+  --bs-primary-layer2: #e5f5ec;
+  --bs-primary-layer3: #d0ebdb;
+  --bs-primary-layer4: #8fc9a8;
+}
+
+.ulx-default-mode:not(.ulx-dark-mode).ulx-tangerine-theme {
+  --bs-primary: #e67e22;
+  --bs-primary-text: #e67e22;
+  --bs-primary-hover: #c96a16;
+  --bs-primary-layer1: #fff8f2;
+  --bs-primary-layer2: #ffeedd;
+  --bs-primary-layer3: #ffe0c2;
+  --bs-primary-layer4: #f5c08a;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Color themes (dark) — .ulx-dark-mode.ulx-cobalt-theme                      */
+/* -------------------------------------------------------------------------- */
+.ulx-default-mode.ulx-dark-mode.ulx-cobalt-theme {
+  --bs-primary: #216aff;
+  --bs-primary-text: #4995ff;
+  --bs-primary-hover: #4995ff;
+  --bs-primary-layer1: #20242f;
+  --bs-primary-layer2: #292e3d;
+  --bs-primary-layer3: #343a4f;
+  --bs-primary-layer4: #3e4863;
+}
+
+.ulx-default-mode.ulx-dark-mode.ulx-cardinal-theme {
+  --bs-primary: #e85a6e;
+  --bs-primary-text: #f07a8a;
+  --bs-primary-hover: #f07a8a;
+  --bs-primary-layer1: #2f2024;
+  --bs-primary-layer2: #3d292e;
+  --bs-primary-layer3: #4f343a;
+  --bs-primary-layer4: #633e46;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Font face switching (product body classes)                                 */
+/* -------------------------------------------------------------------------- */
+body.lato,
+body.lato2 {
+  --bs-font-regular: 'Lato', system-ui, sans-serif;
+  --bs-font-medium: 'Lato', system-ui, sans-serif;
+  --bs-font-bold: 'Lato', system-ui, sans-serif;
+}
+
+body.roboto {
+  --bs-font-regular: 'Roboto', system-ui, sans-serif;
+  --bs-font-medium: 'Roboto', system-ui, sans-serif;
+  --bs-font-bold: 'Roboto', system-ui, sans-serif;
+}
+
+body.manrope {
+  --bs-font-regular: 'Manrope', system-ui, sans-serif;
+  --bs-font-medium: 'Manrope', system-ui, sans-serif;
+  --bs-font-bold: 'Manrope', system-ui, sans-serif;
+}
+
+body.zoho-puvi,
+body.puvi {
+  --bs-font-regular: 'Zoho Puvi', 'Puvi', system-ui, sans-serif;
+  --bs-font-medium: 'Zoho Puvi', 'Puvi', system-ui, sans-serif;
+  --bs-font-bold: 'Zoho Puvi', 'Puvi', system-ui, sans-serif;
+}
