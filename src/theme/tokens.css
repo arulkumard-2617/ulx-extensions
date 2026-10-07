@@ -1,6 +1,6 @@
 /*
   Backstage page kit — theme tokens
-  Values aligned with ULS light/dark/cobalt themes (uls_v2).
+  Values aligned with ULS light/dark/cobalt themes (uls repo dark-mode.less / themes.less).
   Body classes match product: ulx-default-mode, ulx-dark-mode, ulx-cobalt-theme, etc.
 */
 
@@ -78,7 +78,8 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* Dark mode (stacks on default-mode, same as product)                        */
+/* Dark mode — values from uls `app/styles/base/dark-mode.less`               */
+/* Always stacks on base: ulx-default-mode ulx-dark-mode                      */
 /* -------------------------------------------------------------------------- */
 .ulx-default-mode.ulx-dark-mode {
   --bs-primary-text: #6e7bf7;
@@ -94,32 +95,35 @@
   --bs-text-muted: #a8a8a8;
   --bs-placeholder: #676a70;
 
-  --bs-body-bg: #141414;
-  --bs-surface: #1c1c1c;
-  --bs-surface-2: #242424;
-  --bs-surface-3: #2a2a2a;
+  --bs-body-bg: #1c1c1c;
+  --bs-surface: #242424;
+  --bs-surface-2: #2a2a2a;
+  --bs-surface-3: #303030;
   --bs-secondary-bg: #303030;
-  --bs-nav-bg: #0f0f14;
+  --bs-nav-bg: #141414;
   --bs-sidebar-bg: #1c1c1c;
-  --bs-sidebar-active-bg: #292a3d;
-  --bs-alert-bg: #3d3420;
-  --bs-alert-border: #8a7340;
-  --bs-overlay: rgba(0, 0, 0, 0.72);
+  --bs-sidebar-active-bg: #1f1f1f;
+  --bs-alert-bg: #2c1c02;
+  --bs-alert-border: #9e7e28;
+  --bs-overlay: rgba(30, 31, 43, 0.7);
   --bs-shadow-overlay: 0 12px 32px rgba(0, 0, 0, 0.4);
 
   --bs-border: #3a3a3a;
   --bs-border-dark: #535353;
 
-  --bs-input-bg: #242424;
+  --bs-input-bg: #121212;
   --bs-input-fg: #e7e7e7;
   --bs-input-border: #535353;
-  --bs-input-disabled-bg: #303030;
+  --bs-input-disabled-bg: #363636;
   --bs-input-focus-border: #6e7bf7;
 
-  --bs-success-bg: #14532d;
-  --bs-warning-bg: #78350f;
-  --bs-danger-bg: #7f1d1d;
-  --bs-info-bg: #1e3a5f;
+  --bs-success-bg: #021a0b;
+  --bs-warning-bg: #2c1c02;
+  --bs-danger-bg: #2b0205;
+  --bs-info-bg: #03213d;
+
+  color: var(--bs-text);
+  background-color: var(--bs-body-bg);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -166,12 +170,13 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* Color themes (dark) — .ulx-dark-mode.ulx-cobalt-theme                      */
+/* Color themes (dark) — values from uls `app/styles/base/themes.less`        */
 /* -------------------------------------------------------------------------- */
 .ulx-default-mode.ulx-dark-mode.ulx-cobalt-theme {
   --bs-primary: #216aff;
   --bs-primary-text: #4995ff;
-  --bs-primary-hover: #4995ff;
+  --bs-primary-hover: #1c4ab8;
+  --bs-primary-disabled: #3057a7;
   --bs-primary-layer1: #20242f;
   --bs-primary-layer2: #292e3d;
   --bs-primary-layer3: #343a4f;
@@ -179,13 +184,37 @@
 }
 
 .ulx-default-mode.ulx-dark-mode.ulx-cardinal-theme {
-  --bs-primary: #e85a6e;
-  --bs-primary-text: #f07a8a;
-  --bs-primary-hover: #f07a8a;
-  --bs-primary-layer1: #2f2024;
-  --bs-primary-layer2: #3d292e;
-  --bs-primary-layer3: #4f343a;
-  --bs-primary-layer4: #633e46;
+  --bs-primary: #e3402e;
+  --bs-primary-text: #ff4958;
+  --bs-primary-hover: #a62219;
+  --bs-primary-disabled: #b3473c;
+  --bs-primary-layer1: #2f2021;
+  --bs-primary-layer2: #3f2a2b;
+  --bs-primary-layer3: #4f3436;
+  --bs-primary-layer4: #633e40;
+}
+
+.ulx-default-mode.ulx-dark-mode.ulx-fern-theme {
+  --bs-primary: #0c8844;
+  --bs-primary-text: #10a654;
+  --bs-primary-hover: #07823f;
+  --bs-primary-disabled: #1e6b41;
+  --bs-primary-layer1: #202f2a;
+  --bs-primary-layer2: #293d35;
+  --bs-primary-layer3: #344f45;
+  --bs-primary-layer4: #3e635c;
+}
+
+.ulx-default-mode.ulx-dark-mode.ulx-tangerine-theme {
+  --bs-primary: #ebb625;
+  --bs-primary-fg: #000000;
+  --bs-primary-text: #eeaf03;
+  --bs-primary-hover: #c49016;
+  --bs-primary-disabled: #9b7a21;
+  --bs-primary-layer1: #2f2b20;
+  --bs-primary-layer2: #3d3729;
+  --bs-primary-layer3: #4f4734;
+  --bs-primary-layer4: #63583e;
 }
 
 /* -------------------------------------------------------------------------- */
