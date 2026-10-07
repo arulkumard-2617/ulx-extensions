@@ -1,5 +1,7 @@
 # Plugin manifest reference
 
+This starter’s root `plugin-manifest.json` declares one `backstage.space.settings.left.pane` route widget. Its root `url` and `navigationConfig.url` are both `/app/widget/index.html`, and its `title` is `Welcome widget`. Use the examples below when adding or changing surfaces.
+
 ## Base manifest
 
 ```json
@@ -16,7 +18,7 @@
 }
 ```
 
-`service`, `locale`, `whiteListedDomains`, and `modules.widgets` are required. `storage` and `dcConnectors` are optional. Extra packaging fields such as `cspDomains` do not replace `whiteListedDomains`.
+`service`, `locale`, `whiteListedDomains`, and `modules.widgets` are required. `storage` and `dcConnectors` are optional until the widget calls `app.request`. Extra packaging fields such as `cspDomains` do not replace `whiteListedDomains`.
 
 `modules.functions` and `modules.triggers` are optional. Omit them when unused.
 
@@ -24,10 +26,12 @@
 
 - `location`: required and must resolve to a supported static location.
 - `id`: required, non-empty, and unique across all widgets.
+- `url`: required on every widget, including `route` and `newTab`, and must be a non-empty `/app/` path.
+- `title`: the widget label consumed by menu and navigation hosts. Do not add `labelConfig`.
 - A full location may appear only once.
 - A suffix such as `backstage.exhibitor.menu#crm-search` creates a distinct full location; validation removes the suffix when checking support and background count.
 - Only one `backstage.background.process` widget is allowed, including suffixed variants.
-- `icon` and `title` may be consumed by menu/navigation hosts.
+- `icon` may be consumed by menu hosts.
 
 ## Side pane or modal
 
@@ -42,7 +46,7 @@
 }
 ```
 
-`sidePane`, `modal`, embedded widgets, background widgets, and widgets with no `viewMode` require a non-empty root `url`.
+Every widget requires a non-empty root `url`. `sidePane`, `modal`, embedded widgets, background widgets, and widgets with no `viewMode` render that `url`.
 
 ## Popup
 
@@ -50,6 +54,7 @@
 {
   "location": "backstage.site.pre.registration",
   "id": "pre-registration-popup",
+  "title": "Pre-registration",
   "viewMode": "popup",
   "url": "/app/pre-registration.html",
   "popupConfig": {
@@ -69,7 +74,9 @@ Static target:
 {
   "location": "backstage.event.attendee.menu",
   "id": "attendee-help",
+  "title": "Attendee help",
   "viewMode": "newTab",
+  "url": "/app/attendee-help.html",
   "navigationConfig": {
     "urlType": "static",
     "url": "https://example.com/help"
@@ -83,7 +90,9 @@ Dynamic target:
 {
   "location": "backstage.event.attendee.menu",
   "id": "attendee-dynamic-link",
+  "title": "Attendee link",
   "viewMode": "newTab",
+  "url": "/app/attendee-link.html",
   "navigationConfig": {
     "urlType": "dynamic",
     "method": "resolveAttendeeUrl"
@@ -91,7 +100,7 @@ Dynamic target:
 }
 ```
 
-`newTab` does not require a root widget `url`. Its `urlType` must be exactly `static` or `dynamic`.
+`newTab` requires a root widget `url`. Its `urlType` must be exactly `static` or `dynamic`. A static `navigationConfig.url` may be an external HTTPS address. A dynamic target uses `navigationConfig.method`.
 
 ## Route
 
@@ -101,6 +110,7 @@ Dynamic target:
   "id": "event-settings-extension",
   "title": "Extension settings",
   "viewMode": "route",
+  "url": "/app/settings.html",
   "navigationConfig": {
     "customPath": "extension-settings",
     "url": "/app/settings.html"
@@ -108,7 +118,7 @@ Dynamic target:
 }
 ```
 
-Route validation requires both non-empty `navigationConfig.customPath` and `navigationConfig.url`. A root widget `url` does not satisfy the route URL check.
+Route validation requires a root `url`, plus non-empty `navigationConfig.customPath` and `navigationConfig.url`. Both URL fields must point at packaged `/app/` files.
 
 These locations are route-only:
 
@@ -117,29 +127,24 @@ These locations are route-only:
 - `backstage.event.settings.left.pane`
 - `backstage.event.abstract.editor`
 
-## Dynamic and static labels
+## Widget title
+
+Use `title` for the label shown by menu and navigation hosts:
 
 ```json
 {
-  "labelConfig": {
-    "type": "static",
-    "label": "Extension settings"
-  }
+  "title": "Extension settings"
 }
 ```
 
-```json
-{
-  "labelConfig": {
-    "type": "dynamic",
-    "method": "resolveLabel"
-  }
-}
-```
-
-If supplied, use `type: "static"` with a non-empty `label`, or `type: "dynamic"` with a non-empty `method`.
+Do not add `labelConfig`. The host does not use it.
 
 ## Connector declaration
+
+When widget code calls `app.request`, update this manifest in the same change:
+
+- Add each absolute request URL hostname to `whiteListedDomains`.
+- If that call includes `connection`, add the link name inside `dcConnectors`.
 
 The package format maps data centers and connector IDs to service/link names:
 
@@ -154,7 +159,7 @@ The package format maps data centers and connector IDs to service/link names:
 }
 ```
 
-Do not invent connector IDs or data-center mappings. Obtain them from the extension configuration. The link name used by client code must match:
+Do not invent connector IDs or data-center mappings. Obtain them from the extension configuration. The link name used by client code must match the `connection` value:
 
 ```javascript
 await app.request({
@@ -163,6 +168,8 @@ await app.request({
   connection: "readzcrm"
 });
 ```
+
+`app.api` calls are host-backed and do not add `whiteListedDomains` entries.
 
 ## Supported locations
 

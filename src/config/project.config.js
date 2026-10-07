@@ -1,19 +1,11 @@
 /**
- * Public project configuration.
- *
- * External consumers should customize this file before adding pages.
- * Keep runtime values serializable so they can also be reused by build tools.
+ * Host SDK URLs used by validation and packaging.
+ * Widget location and labels live in plugin-manifest.json.
  */
 export const projectConfig = {
-  name: 'ulx-extention-builder',
-  description: 'Build and compile standalone extension pages.',
-  defaultTheme: {
-    mode: 'ulx-default-mode',
-    accent: null,
-    font: null,
-  },
+  name: 'ulx-extension-builder',
+  description: 'Backstage starter for a space-settings welcome widget.',
   hostSdk: {
-    enabled: true,
     sdkUrl:
       'https://static.zohocdn.com/backstage/v1.0/javascript/sdk/ZSDK.min.js',
     frameClientUrl:

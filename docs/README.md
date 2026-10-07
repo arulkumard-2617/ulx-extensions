@@ -1,57 +1,12 @@
-# Eventz SDK Extension Builder
+# Docs
 
-SDK reference bundled with `ulx-extention-builder` for building host extension packages.
+Human-readable reference for this Backstage extension starter. Cursor also loads the same contracts from `.cursor/skills/sdk-extension-builder/` and `.cursor/rules/`.
 
-## Contents
-
-```text
-sdk-extension-builder/
-├── SKILL.md
-├── MANIFEST.md
-├── CLIENT.md
-└── rules/
-    ├── sdk-extension-html.mdc
-    ├── sdk-extension-client.mdc
-    └── sdk-extension-manifest.mdc
-```
-
-## Install in a project
-
-1. Copy this folder to:
-
-   ```text
-   <project>/.cursor/skills/sdk-extension-builder/
-   ```
-
-2. Copy the three files under `rules/` to:
-
-   ```text
-   <project>/.cursor/rules/
-   ```
-
-The skill remains usable without separately installing the rules because `SKILL.md` reads the bundled copies. Installing the rules also makes the focused guidance available independently.
-
-## Install as a personal skill
-
-Copy this folder to:
-
-```text
-~/.cursor/skills/sdk-extension-builder/
-```
-
-Project rules still belong under each project's `.cursor/rules/` directory.
-
-## Use
-
-Ask Cursor to create, scaffold, or update an Eventz Backstage SDK extension, or explicitly request the `sdk-extension-builder` skill.
-
-The bundle covers:
-
-- `plugin-manifest.json`
-- Widget location and `viewMode` validation
-- Compiled PrimeReact + Tailwind pages
-- Required ZSDK and frame-client dependencies
-- Backstage APIs, storage, UI, actions, events, and connector requests
-- Package structure and verification
-
-Connector IDs, data-center mappings, API permissions, and deployment credentials are environment-specific and are intentionally not included.
+| File | Purpose |
+|------|---------|
+| [PROJECT-BLUEPRINT.md](./PROJECT-BLUEPRINT.md) | Architecture and package workflow |
+| [UI-DESIGN-RULES.md](./UI-DESIGN-RULES.md) | Spacing, type, and layout |
+| [PRIMEREACT-USAGE.md](./PRIMEREACT-USAGE.md) | PrimeReact patterns |
+| [CLIENT.md](./CLIENT.md) | Backstage frame-client APIs |
+| [API.md](./API.md) | Backstage v3 query names and response bodies |
+| [MANIFEST.md](./MANIFEST.md) | Plugin manifest contract |

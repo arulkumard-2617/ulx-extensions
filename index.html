@@ -1,15 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html class="h-full" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ulx-extention-builder</title>
+    <title>Welcome widget</title>
+    <script src="https://static.zohocdn.com/backstage/v1.0/javascript/sdk/ZSDK.min.js"></script>
+    <script src="https://static.zohocdn.com/backstage/v1.0/javascript/sdk/bs-frame-client.js"></script>
   </head>
-  <!--
-    Theme classes: ulx-default-mode, ulx-dark-mode, accent themes.
-    Host can set these on the iframe document when embedding.
-  -->
-  <body class="ulx-default-mode">
+  <body class="h-full m-0 ulx-default-mode">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -16,7 +16,7 @@ import './theme/tokens.css';
 import './theme/components.css';
 
 <PrimeReactProvider>
-  <App />
+  <WelcomeWidget />
 </PrimeReactProvider>
 ```
 
@@ -151,24 +151,23 @@ List header:
 
 ---
 
-## Generating pages from a screenshot or prompt
+## Generating a widget from a screenshot or prompt
 
 1. Open `docs/UI-DESIGN-RULES.md` and follow spacing/type.
 2. Pick PrimeReact components from the table above — **do not** rebuild buttons/inputs as raw HTML.
-3. Run `npm run create:page -- your-page "Your page"` or create the component manually.
-4. Register manual pages in `src/pages/manifest.mjs`.
-5. Preview with `npm start`.
-6. Validate with `npm run validate`.
-7. Compile with `npm run compile -- your-page`.
+3. Replace `src/WelcomeWidget.jsx` (and update `plugin-manifest.json` if the location or label changes).
+4. Preview with `npm start`.
+5. Validate and compile with `npm run check`, then pack with `npm run pack`.
 
 ### Prompt template (for AI / teammates)
 
 ```text
-Build a product-style page in this blueprint.
+Build a product-style Backstage widget in this blueprint.
+- Use the sdk-extension-builder skill
 - Use PrimeReact for all controls
 - Use Tailwind for layout/spacing per docs/UI-DESIGN-RULES.md
 - Content only (no app chrome) unless asked
-- Use PageLayout/PageHeader and register the page in src/pages/manifest.mjs
+- Use PageLayout/PageHeader and keep plugin-manifest.json in sync
 [Attach screenshot or describe sections/fields]
 ```
 

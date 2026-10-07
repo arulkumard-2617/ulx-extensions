@@ -7,24 +7,26 @@ alwaysApply: false
 # SDK Extension Manifest
 
 - Keep `service` as `BACKSTAGE`.
-- Include `locale`, `whiteListedDomains`, and `modules.widgets`; use `dcConnectors` for connector declarations.
-- Every widget needs a non-empty, globally unique `id` and a supported `location`.
+- Include `locale`, `whiteListedDomains`, and `modules.widgets`; use `dcConnectors` when widget code calls `app.request` with `connection`.
+- Every widget needs a non-empty, globally unique `id`, a supported `location`, and a non-empty root `url` that starts with `/app/`.
+- Use `title` as the widget label. Do not add `labelConfig`.
 - Do not repeat the same full location. A `#suffix` distinguishes instances, while validation still checks the static location before `#`.
 - Declare at most one widget whose static location is `backstage.background.process`.
 - Keep every local widget URL under `/app/` and ensure the referenced file is packaged.
 
 Mode requirements:
 
-- `route`: include `navigationConfig.customPath` and `navigationConfig.url`, both non-empty.
-- `newTab`: include `navigationConfig.urlType`; `static` requires `navigationConfig.url`, while `dynamic` requires `navigationConfig.method`.
-- `popup`: include root `url`, `popupConfig.position`, and `popupConfig.action`.
-- `sidePane`, `modal`, embedded, background, and widgets without a mode: include root `url`.
+- Every view mode includes root `url`.
+- `route`: also include `navigationConfig.customPath` and `navigationConfig.url`, both non-empty. `navigationConfig.url` must start with `/app/`.
+- `newTab`: also include `navigationConfig.urlType`; `static` requires `navigationConfig.url`, while `dynamic` requires `navigationConfig.method`.
+- `popup`: also include `popupConfig.position` and `popupConfig.action`.
 - Route-only locations must use `viewMode: "route"`: portal settings left pane, space settings left pane, event settings left pane, and event abstract editor.
 
-Optional `labelConfig`:
+When widget source calls `app.request`:
 
-- `{ "type": "static", "label": "..." }`
-- `{ "type": "dynamic", "method": "..." }`
+- Add each absolute URL hostname to `whiteListedDomains`.
+- If the call includes `connection`, add that link name inside `dcConnectors`. Do not invent connector IDs or data-center mappings.
+- Keep the `connection` value identical to its `dcConnectors` link name.
 
 Supported static locations:
 
@@ -43,4 +45,4 @@ Supported static locations:
 - `backstage.event.ticketing.payments`
 - `backstage.event.abstract.editor`
 
-Add only domains the widget actually calls. Keep connector link names identical between `dcConnectors` and `app.request`.
+`app.api` calls do not add domains. Add only hostnames the widget passes to `app.request`.

@@ -6,16 +6,15 @@ import 'primereact/resources/primereact.min.css';
 import './theme/tokens.css';
 import './theme/components.css';
 import './styles/index.css';
-import App from './App.jsx';
+import WelcomeWidget from './WelcomeWidget.jsx';
 import { listenParentTheme } from './theme/theme.js';
 
-// Sync theme from Backstage parent when embedded in iframe
 listenParentTheme();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <PrimeReactProvider>
-      <App />
+      <WelcomeWidget />
     </PrimeReactProvider>
   </StrictMode>,
 );

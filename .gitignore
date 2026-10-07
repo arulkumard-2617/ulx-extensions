@@ -2,9 +2,11 @@ node_modules
 dist
 dist-app
 .page-entries
+app
 *.local
 .DS_Store
 .vscode
 .idea
 *.log
 *.zip
+ZET-debug.log
