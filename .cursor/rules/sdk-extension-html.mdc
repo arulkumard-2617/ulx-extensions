@@ -1,66 +1,25 @@
 ---
-description: Build plain HTML Eventz extension widgets with Tailwind utilities, kit theme tokens, and required Backstage SDK dependencies
+description: Build Backstage extension widgets with React, PrimeReact, Tailwind tokens, and the required SDK scripts
 alwaysApply: false
 ---
 
 # SDK Extension HTML
 
-Use semantic plain HTML. Do not emit Ember, React, web-component, or `Ulx*` component syntax.
+Use React in this starter. Do not emit Ember, web-component, or `Ulx*` component syntax.
 
-Start every widget document with these dependencies in this order:
+Start the widget document with these scripts in this order, then the application module:
 
 ```html
 <script src="https://static.zohocdn.com/backstage/v1.0/javascript/sdk/ZSDK.min.js"></script>
 <script src="https://static.zohocdn.com/backstage/v1.0/javascript/sdk/bs-frame-client.js"></script>
 ```
 
-Include the compiled kit CSS (theme tokens + Tailwind utilities) for the widget iframe. Prefer the page build output from this repo (`dist/<page>/assets/*.css`) or the shared kit stylesheet when embedding.
-
-## Layout & theme
-
-- Use `<html class="h-full">`, `<body class="h-full m-0 ulx-default-mode">`, and a full-size main container when the widget owns its iframe.
-- Keep `ulx-default-mode` (and optional `ulx-dark-mode` / accent theme classes) on `<body>` so kit CSS variables resolve; do not use ULX component classes.
-- Style with **Tailwind utilities** and kit token colors from `tailwind.config.js` / `src/theme/tokens.css`.
-- Prefer token-backed colors: `bg-body`, `bg-surface`, `bg-surface-2`, `text-text`, `text-text-secondary`, `text-text-muted`, `text-primary`, `border-border`, `bg-primary`, `text-primary-fg`, `bg-danger`, `bg-success`.
-- Compose layout with utilities: `flex`, `flex-col`, `items-center`, `justify-between`, `gap-*`, `m-*`, `p-*`, `w-full`, `h-full`, `min-h-full`, `overflow-*`, `rounded-md` / `rounded-lg`.
-- Avoid custom CSS, inline styles, and hard-coded hex colors when a Tailwind or token class exists.
-- Use semantic controls (`button`, `input`, `select`, `textarea`, `table`) with labels and accessible names.
+- Keep SDK URLs aligned with `src/config/project.config.js`.
+- Use `<html class="h-full">`, `<body class="h-full m-0 ulx-default-mode">`, and a full-size `#root`.
+- Do not link the legacy ULX editor stylesheet.
+- Use PrimeReact for buttons, inputs, tables, dialogs, tags, and feedback.
+- Compose layout with Tailwind utilities and token classes such as `bg-body`, `bg-surface`, `text-primary`, `border-border`, `flex`, `gap-*`, `p-*`, and `w-full`.
+- Avoid custom CSS, inline styles, and hard-coded colors when a token class exists.
+- Use semantic controls with labels and accessible names.
 - Decorative icons use `aria-hidden="true"`; meaningful images have useful `alt` text.
-- Hidden state must keep the `hidden` attribute and `hidden` class synchronized when both are used.
-- Render untrusted values with `textContent`; do not inject them through `innerHTML`.
-
-## Preferred patterns
-
-```html
-<body class="h-full m-0 ulx-default-mode bg-body text-text">
-  <main class="flex h-full min-h-full flex-col gap-4 p-6">
-    <button
-      type="button"
-      class="inline-flex min-h-btn-m items-center justify-center rounded-md bg-primary px-3 text-small font-medium text-primary-fg"
-    >
-      Save
-    </button>
-
-    <label class="flex flex-col gap-1.5">
-      <span class="text-small font-medium text-text">Name</span>
-      <input
-        class="min-h-btn-m w-full rounded-md border border-border bg-surface px-2 text-default text-text"
-        type="text"
-      />
-    </label>
-
-    <div class="rounded-lg border border-border bg-surface p-5">
-      Content
-    </div>
-
-    <div
-      class="rounded-md border border-border bg-danger/10 px-3 py-2 text-small text-danger"
-      role="alert"
-    >
-      Unable to save.
-    </div>
-  </main>
-</body>
-```
-
-When class names are uncertain, check `tailwind.config.js`, `src/theme/tokens.css`, and `docs/UI-DESIGN-RULES.md` before using them.
+- Render untrusted values as text; do not inject them through `innerHTML` or `dangerouslySetInnerHTML`.

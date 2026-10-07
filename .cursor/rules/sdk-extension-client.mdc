@@ -1,5 +1,5 @@
 ---
-description: Use the Backstage frame client safely from plain HTML extension widgets
+description: Use the Backstage frame client safely from extension widgets
 alwaysApply: false
 ---
 
@@ -13,9 +13,9 @@ const app = await ZBackstage.extension.init();
 ```
 
 - Use the augmented `app` APIs; do not call the underlying Sigma `get`, `set`, `remove`, or raw request methods.
-- Read host context from initialized metadata such as `app.portalId`, `app.eventId`, and `app.user`. Treat location-specific metadata as optional unless the selected location guarantees it.
-- Use `app.api.<operationId>(...pathParams, options)` for Backstage v3 APIs. Put mutating request payloads in `options.body`.
-- Use `app.request({ apiType, url, connection, method, headers, data })` only for connector-backed external/DRE calls. Declare the domain and connector in `plugin-manifest.json`.
+- Read host context from initialized metadata such as `app.portalId`, `app.eventId`, `app.spaceId`, and `app.user`. Treat location-specific metadata as optional unless the selected location guarantees it.
+- Use `app.api` for Backstage v3 APIs. Follow the API rule: pass documented snake_case query names in the final argument, put write payloads in `body`, and read the raw REST JSON body.
+- Use `app.request({ apiType, url, connection, method, headers, data })` only for connector-backed external/DRE calls. Add each absolute URL hostname to `whiteListedDomains`. When `connection` is set, add that link name to `dcConnectors`.
 - Use `app.storage.set/get/delete` for extension-scoped JSON-serializable state.
 - Use `app.ui.notify(message, { type })`, `app.ui.confirm`, `app.ui.alert`, `app.ui.modal`, `app.ui.openPane`, `app.ui.closePane`, and `app.ui.closeModal` for host UI.
 - Use `app.widget.render(widgetId)` only for a manifest widget whose `viewMode` is `sidePane` or `modal`.

@@ -1,6 +1,6 @@
 # ULX Extension UI Design Rules
 
-Rules for building consistent custom pages with this blueprint.
+Rules for building consistent widget pages with this blueprint.
 The patterns are derived from approved product screens such as settings forms,
 member lists, drawers, dialogs, schedules, and data tables.
 
@@ -8,7 +8,7 @@ member lists, drawers, dialogs, schedules, and data tables.
 
 ---
 
-Do **not** put preview chrome (e.g. “All pages”) inside page components. That belongs in `src/components/AppPreviewShell.jsx` for `npm start` only. Standalone `dist/<page>/` uploads must be content-only.
+Keep the widget **content-only**. Do not rebuild Backstage navigation inside the iframe. Edit `src/WelcomeWidget.jsx`; `npm run build` then `npm run pack`.
 
 ---
 
@@ -168,7 +168,7 @@ When the user pastes a screenshot or describes a page:
 3. Apply spacing and typography from this file; prefer clear, airy admin UI over compact defaults.
 4. Use theme tokens for color; size classes `s-size` | `m-size` | `l-size` on controls.
 5. Build only the **iframe content** unless chrome is requested.
-6. Put the page under `src/pages/` and register it in `App.jsx`.
+6. Replace `src/WelcomeWidget.jsx` (and update `plugin-manifest.json` if the location or label changes). Then `npm run check` and `npm run pack`.
 
 ### Checklist before done
 - [ ] Page title hierarchy clear

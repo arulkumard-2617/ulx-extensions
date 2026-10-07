@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-// Relative base so dist works when uploaded / served from an iframe path
 export default defineConfig({
   base: './',
   plugins: [react()],
@@ -12,7 +11,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist-app',
+    outDir: 'app/widget',
     assetsDir: 'assets',
     emptyOutDir: true,
   },

@@ -1,7 +1,5 @@
 /**
- * Standard content-only page canvas for standalone iframe pages.
- *
- * Keep host navigation and preview controls outside this component.
+ * Standard content-only canvas for the Backstage iframe widget.
  */
 export default function PageLayout({
   children,

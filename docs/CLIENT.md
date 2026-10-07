@@ -21,33 +21,15 @@ async function initializeWidget() {
 }
 ```
 
-Initialization augments the Sigma app with metadata and host APIs. Typical metadata includes `portalId`, `eventId`, and `user`; the exact context depends on the widget location.
+Initialization augments the Sigma app with metadata and host APIs. Typical metadata includes `portalId`, `eventId`, `spaceId`, and `user`; the exact context depends on the widget location. This starter’s space-settings widget commonly receives `portalId` and `spaceId`.
 
 Do not use the underlying Sigma `get`, `set`, `remove`, or direct request contract. Use the APIs below.
 
 ## Backstage v3 API
 
-Operations are exposed at runtime as `app.api.<operationId>`.
+Use `app.api` for Zoho Backstage v3 operations. Query names, pagination, and response bodies are defined in [API.md](API.md).
 
-- Pass path parameters positionally in the declared order.
-- The host injects the current `portalId`.
-- Pass query values and options in the final object.
-- Put POST, PUT, and DELETE payloads under `body`.
-
-```javascript
-const event = await app.api.getEvent(app.eventId);
-const attendees = await app.api.listAttendees(app.eventId, {
-  page: 1,
-  perPage: 50
-});
-const exhibitor = await app.api.createExhibitor(app.eventId, {
-  body: {
-    exhibitor_category_id: categoryId,
-    company_name: companyName,
-    contact: { first_name: firstName, email }
-  }
-});
-```
+`app.api` calls are host-backed. They do not add entries to `whiteListedDomains`.
 
 GET operations are cached. Use `{ skipCache: true }` for a fresh call or:
 
@@ -55,8 +37,6 @@ GET operations are cached. Use `{ skipCache: true }` for a fresh call or:
 app.cache.clear("events");
 app.cache.clear();
 ```
-
-Verify operation names and parameter order against the current Backstage extension API catalog; do not guess an operation name.
 
 ## Connector-backed external requests
 
@@ -69,8 +49,10 @@ const response = await app.request({
 });
 ```
 
-- Add the hostname to `whiteListedDomains`.
-- Declare the connector in `dcConnectors`.
+When a widget calls `app.request`, update `plugin-manifest.json` in the same change:
+
+- Add each absolute URL hostname to `whiteListedDomains`.
+- If the call includes `connection`, add that link name inside `dcConnectors`. Do not invent connector IDs or data-center mappings.
 - Keep the `connection` value equal to the configured connector link name.
 - Never embed credentials or access tokens in source.
 
