@@ -4,7 +4,7 @@
  * Light:  ulx-default-mode
  * Dark:   ulx-default-mode ulx-dark-mode
  * Accent: ulx-cobalt-theme | ulx-cardinal-theme | ulx-fern-theme | ulx-tangerine-theme
- * Font:   lato | roboto | manrope | zoho-puvi
+ * Font:   lato | lato2 | roboto | manrope | zoho-puvi | puvi | dyslexic
  */
 
 const MODE_CLASSES = ['ulx-default-mode', 'ulx-dark-mode'];
@@ -14,7 +14,15 @@ const ACCENT_CLASSES = [
   'ulx-fern-theme',
   'ulx-tangerine-theme',
 ];
-const FONT_CLASSES = ['lato', 'lato2', 'roboto', 'manrope', 'zoho-puvi', 'puvi'];
+const FONT_CLASSES = [
+  'lato',
+  'lato2',
+  'roboto',
+  'manrope',
+  'zoho-puvi',
+  'puvi',
+  'dyslexic',
+];
 const ALLOWED_THEME_CLASSES = new Set([
   ...MODE_CLASSES,
   ...ACCENT_CLASSES,

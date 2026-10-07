@@ -1,0 +1,225 @@
+/*
+  Product webfonts — same CDN URLs and family names as uls_v2
+  (src/styles/uls-styles/less/base/typography-vars.less).
+  Switch via body classes: lato | lato2 | roboto | manrope | zoho-puvi | puvi | dyslexic
+*/
+
+/* -------------------------------------------------------------------------- */
+/* Zoho Puvi                                                                  */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'puviregular';
+  font-display: swap;
+  src: url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.eot');
+  src:
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2')
+      format('woff2'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.otf')
+      format('opentype');
+}
+
+@font-face {
+  font-family: 'puvimedium';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.eot');
+  src:
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.woff2')
+      format('woff2'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Medium.otf')
+      format('opentype');
+}
+
+@font-face {
+  font-family: 'puvisemibold';
+  font-display: swap;
+  src: url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Semibold.eot');
+  src:
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Semibold.eot?#iefix')
+      format('embedded-opentype'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Semibold.woff2')
+      format('woff2'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Semibold.otf')
+      format('opentype');
+}
+
+@font-face {
+  font-family: 'puvibold';
+  font-display: swap;
+  src: url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.eot');
+  src:
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.woff2')
+      format('woff2'),
+    url('//static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Bold.otf')
+      format('opentype');
+}
+
+/* -------------------------------------------------------------------------- */
+/* Lato2                                                                      */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'lato2regular';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/lato2regular/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/lato2regular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'lato2semibold';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/lato2semibold/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/lato2semibold/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'lato2light';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/lato2light/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/lato2light/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'lato2bold';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/lato2bold/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/lato2bold/font.woff') format('woff');
+}
+
+/* -------------------------------------------------------------------------- */
+/* Lato                                                                       */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'latoregular';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/latoregular/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/latoregular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'latobold';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/latobold/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/latobold/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'latolight';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/latolight/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/latolight/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'latoblack';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/latoblack/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/latoblack/font.woff') format('woff');
+}
+
+/* -------------------------------------------------------------------------- */
+/* Roboto                                                                     */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'robotoregular';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/robotoregular/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/robotoregular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'robotomedium';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/robotomedium/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/robotomedium/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'robotolight';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/robotolight/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/robotolight/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'robotobold';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/robotobold/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/robotobold/font.woff') format('woff');
+}
+
+/* -------------------------------------------------------------------------- */
+/* Manrope                                                                    */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'manroperegular';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/manroperegular/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/manroperegular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'manropesemibold';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/manropesemibold/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/manropesemibold/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'manropelight';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/manropelight/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/manropelight/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'manropebold';
+  font-display: swap;
+  src:
+    url('https://static.zohocdn.com/webfonts/manropebold/font.woff2') format('woff2'),
+    url('https://static.zohocdn.com/webfonts/manropebold/font.woff') format('woff');
+}
+
+/* -------------------------------------------------------------------------- */
+/* Open Dyslexic                                                              */
+/* -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'opendyslexicregular';
+  font-display: swap;
+  src: url('//static.zohocdn.com/webfonts/opendyslexicregular/font.eot');
+  src:
+    url('//static.zohocdn.com/webfonts/opendyslexicregular/font.eot?#iefix') format('eot'),
+    url('//static.zohocdn.com/webfonts/opendyslexicregular/font.woff2') format('woff2'),
+    url('//static.zohocdn.com/webfonts/opendyslexicregular/font.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'opendyslexicbold';
+  font-display: swap;
+  src: url('//static.zohocdn.com/webfonts/opendyslexicbold/font.eot');
+  src:
+    url('//static.zohocdn.com/webfonts/opendyslexicbold/font.eot?#iefix') format('eot'),
+    url('//static.zohocdn.com/webfonts/opendyslexicbold/font.woff2') format('woff2'),
+    url('//static.zohocdn.com/webfonts/opendyslexicbold/font.woff') format('woff');
+}

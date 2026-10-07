@@ -25,10 +25,11 @@ and a compiler that writes `app/widget/` for [Zoho Extension Toolkit](https://he
 - `src/config/project.config.js` — project identity and host SDK URLs
 - `public/` — static images and font files
 - `src/theme/tokens.css` — only when adding approved product tokens
+- `src/theme/fonts.css` — product webfont `@font-face` (Zoho CDN; keep in sync with uls_v2)
 
 ### Blueprint infrastructure
 
-- `src/main.jsx` — widget mounting and theme listener
+- `src/main.jsx` — widget mounting, fonts/tokens import, and theme listener
 - `scripts/build-extension.mjs` — package compiler
 - `scripts/validate-extension.mjs` — manifest and package checks
 - `.cursor/skills/sdk-extension-builder/` — AI skill for building widgets

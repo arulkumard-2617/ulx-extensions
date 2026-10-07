@@ -12,6 +12,7 @@ Read [UI-DESIGN-RULES.md](./UI-DESIGN-RULES.md) for spacing, typography, and lay
 import { PrimeReactProvider } from 'primereact/api';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.min.css';
+import './theme/fonts.css';
 import './theme/tokens.css';
 import './theme/components.css';
 
@@ -22,6 +23,7 @@ import './theme/components.css';
 
 Theme look for Button, Input, Tag, Dropdown, Card is in `src/theme/components.css`.
 Colors follow `ulx-*` body classes via `src/theme/tokens.css`.
+Fonts load from `src/theme/fonts.css` (Zoho CDN, same as uls_v2); switch with body classes `lato`, `roboto`, `zoho-puvi`, etc.
 
 ---
 

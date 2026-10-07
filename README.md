@@ -62,7 +62,8 @@ Set on `<body>` (host can inject these into the iframe):
 
 Accent themes: `ulx-cobalt-theme`, `ulx-cardinal-theme`, `ulx-fern-theme`, `ulx-tangerine-theme`
 
-Font classes: `lato`, `roboto`, `manrope`, `zoho-puvi`
+Font classes: `lato`, `lato2`, `roboto`, `manrope`, `zoho-puvi`, `puvi`, `dyslexic`
+(CDN `@font-face` URLs match uls_v2 — see `src/theme/fonts.css`)
 
 Parent app can also `postMessage` into the iframe:
 

@@ -19,6 +19,7 @@ Keep the widget **content-only**. Do not rebuild Backstage navigation inside the
 | **PrimeReact** | Interactive controls — Button, InputText, Dropdown, Dialog, Sidebar, DataTable, Checkbox, InputSwitch, Tag, Avatar, ProgressBar, Menu, etc. |
 | **Tailwind** | Layout, spacing, typography scale, page structure — `flex`, `grid`, `gap-*`, `p-*`, `max-w-*`, text utilities |
 | **Theme tokens** (`src/theme/tokens.css`) | Colors that follow product light/dark/accent via `ulx-*` body classes |
+| **Webfonts** (`src/theme/fonts.css`) | Product `@font-face` CDN URLs; switch with body classes (`lato`, `roboto`, `zoho-puvi`, …) |
 
 Do **not** invent a second design system. Prefer PrimeReact + token colors + Tailwind spacing.
 
@@ -59,7 +60,7 @@ Use an **8px rhythm** (Tailwind spacing in this kit: `1` = 4px, `2` = 8px).
 
 ## 4. Typography
 
-Sans-serif stack via tokens (`Lato` / product font classes on `body`).
+Sans-serif stack via product webfonts (`puviregular` default) and body font classes (`lato`, `roboto`, `zoho-puvi`, …) — see `src/theme/fonts.css`.
 
 | Role | Approx size | Weight | Color | Example |
 |------|-------------|--------|-------|---------|

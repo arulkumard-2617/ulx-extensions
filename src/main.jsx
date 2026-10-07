@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { PrimeReactProvider } from 'primereact/api';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.min.css';
+import './theme/fonts.css';
 import './theme/tokens.css';
 import './theme/components.css';
 import './styles/index.css';

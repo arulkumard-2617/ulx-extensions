@@ -64,10 +64,11 @@
   --bs-radius-sm: 4px;
   --bs-radius-lg: 8px;
 
-  --bs-font-regular: 'Lato', system-ui, -apple-system, sans-serif;
-  --bs-font-medium: 'Lato', system-ui, -apple-system, sans-serif;
-  --bs-font-bold: 'Lato', system-ui, -apple-system, sans-serif;
-  --bs-font-light: 'Lato', system-ui, -apple-system, sans-serif;
+  /* Default matches ULS (puvi) — body classes override these */
+  --bs-font-regular: puviregular, system-ui, -apple-system, sans-serif;
+  --bs-font-medium: puvimedium, system-ui, -apple-system, sans-serif;
+  --bs-font-bold: puvisemibold, system-ui, -apple-system, sans-serif;
+  --bs-font-light: puviregular, system-ui, -apple-system, sans-serif;
 
   color: var(--bs-text);
   background-color: var(--bs-body-bg);
@@ -188,30 +189,41 @@
 }
 
 /* -------------------------------------------------------------------------- */
-/* Font face switching (product body classes)                                 */
+/* Font face switching (product body classes — same as uls_v2 root-config)    */
 /* -------------------------------------------------------------------------- */
 body.lato,
 body.lato2 {
-  --bs-font-regular: 'Lato', system-ui, sans-serif;
-  --bs-font-medium: 'Lato', system-ui, sans-serif;
-  --bs-font-bold: 'Lato', system-ui, sans-serif;
+  --bs-font-regular: lato2regular, system-ui, sans-serif;
+  --bs-font-medium: lato2semibold, system-ui, sans-serif;
+  --bs-font-bold: lato2bold, system-ui, sans-serif;
+  --bs-font-light: lato2light, system-ui, sans-serif;
 }
 
 body.roboto {
-  --bs-font-regular: 'Roboto', system-ui, sans-serif;
-  --bs-font-medium: 'Roboto', system-ui, sans-serif;
-  --bs-font-bold: 'Roboto', system-ui, sans-serif;
+  --bs-font-regular: robotoregular, system-ui, sans-serif;
+  --bs-font-medium: robotomedium, system-ui, sans-serif;
+  --bs-font-bold: robotobold, system-ui, sans-serif;
+  --bs-font-light: robotolight, system-ui, sans-serif;
 }
 
 body.manrope {
-  --bs-font-regular: 'Manrope', system-ui, sans-serif;
-  --bs-font-medium: 'Manrope', system-ui, sans-serif;
-  --bs-font-bold: 'Manrope', system-ui, sans-serif;
+  --bs-font-regular: manroperegular, system-ui, sans-serif;
+  --bs-font-medium: manropesemibold, system-ui, sans-serif;
+  --bs-font-bold: manropebold, system-ui, sans-serif;
+  --bs-font-light: manropelight, system-ui, sans-serif;
 }
 
 body.zoho-puvi,
 body.puvi {
-  --bs-font-regular: 'Zoho Puvi', 'Puvi', system-ui, sans-serif;
-  --bs-font-medium: 'Zoho Puvi', 'Puvi', system-ui, sans-serif;
-  --bs-font-bold: 'Zoho Puvi', 'Puvi', system-ui, sans-serif;
+  --bs-font-regular: puviregular, system-ui, sans-serif;
+  --bs-font-medium: puvimedium, system-ui, sans-serif;
+  --bs-font-bold: puvisemibold, system-ui, sans-serif;
+  --bs-font-light: puviregular, system-ui, sans-serif;
+}
+
+body.dyslexic {
+  --bs-font-regular: opendyslexicregular, system-ui, sans-serif;
+  --bs-font-medium: opendyslexicbold, system-ui, sans-serif;
+  --bs-font-bold: opendyslexicbold, system-ui, sans-serif;
+  --bs-font-light: opendyslexicregular, system-ui, sans-serif;
 }
